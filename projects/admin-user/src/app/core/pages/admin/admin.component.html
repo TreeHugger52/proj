@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav mat-elevation-z5"
+    fixedInViewport
+    [mode]="(isHandset$ | async) ? 'side' : 'over'"
+    [opened]="false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <mat-divider></mat-divider>
+      <mat-list-item [routerLink]="['database']">Database</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item [routerLink]="['users']">Users</mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-elevation-z5" mat-align-tabs="">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="spacer"></span>
+      <mat-card-title class="main-title">Admin Dashboard</mat-card-title>
+      <span class="spacer"></span>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="logout()"
+      >
+        <mat-icon aria-label="logout">logout</mat-icon>
+      </button>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,13 @@
+.full-width-table {
+  width: 100%;
+}
+.search {
+  padding-top: 20px;
+}
+.search-bar {
+  display: flex;
+  justify-content: space-evenly;
+}
+.filter {
+  justify-content: center;
+}

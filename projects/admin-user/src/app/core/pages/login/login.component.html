@@ -1,0 +1,40 @@
+<div class="main">
+  <mat-card class="shadow mat-elevation-z5">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form role="form" [formGroup]="loginForm" (ngSubmit)="login()">
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="uid"
+            formControlName="userID"
+            required
+          /> </mat-form-field
+        ><br />
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="pin"
+            formControlName="pin"
+            required
+          />
+        </mat-form-field>
+
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!loginForm.valid"
+          >
+            Sign In
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
